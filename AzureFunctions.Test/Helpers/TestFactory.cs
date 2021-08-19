@@ -69,7 +69,7 @@ namespace AzureFunctions.Test.Helpers
 
         public static Stream GenerateStreamFromString(string stringToConvert)
         {
-            MemoryStream stream = new MemoryStream(Convert.FromBase64String(stringToConvert));
+            MemoryStream stream = new MemoryStream();
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(stringToConvert);
             writer.Flush();
