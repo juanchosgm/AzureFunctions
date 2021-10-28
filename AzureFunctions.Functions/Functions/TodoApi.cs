@@ -23,6 +23,7 @@ namespace AzureFunctions.Functions.Functions
             ILogger log)
         {
             log.LogInformation("Received a new todo from steven.");
+            log.LogInformation("This is a change to generate conflicts.");
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             Todo todo = JsonConvert.DeserializeObject<Todo>(requestBody);
             if (string.IsNullOrWhiteSpace(todo?.TaskDescription))
