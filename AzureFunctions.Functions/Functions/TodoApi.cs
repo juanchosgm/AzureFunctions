@@ -22,7 +22,7 @@ namespace AzureFunctions.Functions.Functions
             [Table("todo", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
             ILogger log)
         {
-            log.LogInformation("Received a new todo.");
+            log.LogInformation("Received a new todo from steven.");
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             Todo todo = JsonConvert.DeserializeObject<Todo>(requestBody);
             if (string.IsNullOrWhiteSpace(todo?.TaskDescription))
