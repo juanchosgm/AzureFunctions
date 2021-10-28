@@ -22,6 +22,7 @@ namespace AzureFunctions.Functions.Functions
             [Table("todo", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
             ILogger log)
         {
+            log.LogInformation("This is a change to generate conflicts.");
             log.LogInformation("Received a new todo.");
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             Todo todo = JsonConvert.DeserializeObject<Todo>(requestBody);
