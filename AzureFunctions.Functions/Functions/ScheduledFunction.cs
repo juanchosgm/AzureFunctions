@@ -28,6 +28,7 @@ namespace AzureFunctions.Functions.Functions
                 deleted++;
             }
             log.LogInformation($"Deleted: {deleted} items at: {DateTime.Now}");
+            log.LogInformation("HI");
         }
     }
 }
